@@ -2,10 +2,10 @@
   "name": "csci-430-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "env-cmd nodemon ./src/app.js",
-    "start": "node src/index.js"
+    "start": "node src/app.js"
   },
   "author": "",
   "license": "ISC",
