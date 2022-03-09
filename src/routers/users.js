@@ -13,7 +13,7 @@ router.post('/users', async (req, res) => {
     await user.save()
     const token = await user.generateAuthToken()
     
-    console.log("New User Saved")
+    console.log('New User Saved')
 
     sendWelcomeEmail(user.email, user.name)
     res.status(201).send({user, token})
@@ -30,6 +30,7 @@ router.post('/users/login', async (req, res) => {
     const user = await User.findByCredentials(req.body.email, req.body.password)
     const token = await user.generateAuthToken()
     res.status(200).send({user, token})
+    console.log('Sent token')
   } 
   catch (e) {    
     res.status(400).send()
