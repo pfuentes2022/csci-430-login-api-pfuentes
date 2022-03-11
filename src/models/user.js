@@ -61,11 +61,12 @@ const userSchema = new Schema({
   
     user.tokens = user.tokens.concat({ token })
     await user.save()
-  
+    console.log('Returning token')
     return token
   }
 
-  userSchema.statics.findByCredentials = async (email, password) => {       
+  userSchema.statics.findByCredentials = async (email, password) => {
+    console.log('Searching for user')       
     const user = await User.findOne({email}) 
     if (!user) { 
       throw new Error('Unable to login') 
