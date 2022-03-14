@@ -44,7 +44,7 @@ router.get('/users/me', auth, async (req, res) => {
 router.patch('/users/me', auth, async(req, res) => {
   const mods = req.body
   const props = Object.keys(mods)
-  const modifiable = ['email', 'password']
+  const modifiable = ['email', 'name']
   const isValid = props.every((prop) => modifiable.includes(prop))
 
   if (!isValid) {
