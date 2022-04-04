@@ -70,7 +70,6 @@ router.patch('/tasks', auth, async(req, res) => {
         })
         console.log(props) */
     
-    
     const modifiable = ['_id', 'title', 'description', 'completed']
     const isValid = props.every((prop) => modifiable.includes(prop))
     const validUser = task.owner.equals(user._id)
