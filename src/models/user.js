@@ -35,6 +35,10 @@ const userSchema = new Schema({
         trim: true
       },
 
+      avatar: {
+        type: Buffer
+      },
+
       tokens: [{
         token: {
             type: String,
@@ -100,6 +104,7 @@ const userSchema = new Schema({
     delete userObject.password
     delete userObject.__v
     delete userObject.tokens
+    delete userObject.avatar
     
     return userObject
   }
