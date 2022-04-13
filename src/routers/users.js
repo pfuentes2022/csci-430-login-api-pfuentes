@@ -119,7 +119,7 @@ router.post('/users/me/avatar', auth, upload.single('avatar'), async (req, res) 
 router.get('/users/me/avatar', auth, async (req, res) => {
   const user = req.user
   if (!user.avatar) {
-    return res.status(404).send()
+    return res.status(400).send()
   }
   res.set('Content-Type', 'image/png')
   res.send(user.avatar)
